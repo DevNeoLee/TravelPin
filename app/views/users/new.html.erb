@@ -1,23 +1,29 @@
-<div class="limiter">
+<div class="limiter backphoto">
+	<a class="logo_link" href="/"><div class="logo">
+        <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
+        <h1> PikachuTravel </h1>
+    </div></a>
 	
-		<div class="container-login100" style="background-image: url(bg-01.jpg)">
+	<div class="container-login100">
 			
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-					
-					<h4><%flash.each do |name, msg|%> </h4>
-						<%= msg %>
-					<%end %>
-
+					<div class="log_message">
+						<h4><%flash.each do |name, msg|%> </h4>
+							<%= msg %>
+						<%end %>
+					</div>
 
 					<%= form_with model: @user, url: users_path, local: true, class: "login100-form validate-form" do |f| %>
-						<% if @user.errors.any? %>
-							<% @user.errors.full_messages.each do |error| %>
-								<div><%= error %></div>
+							<% if @user.errors.any? %>
+								<div class="log_message">	
+								<% @user.errors.full_messages.each do |error| %>
+									<div><%= error %></div>
+								<% end %>
+							</div>
 							<% end %>
-						<% end %>
-
+						
 					<span class="login100-form-title p-b-49">
-						From Users/New SignUp
+						SignUp
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
@@ -28,21 +34,14 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Password</span>
-						<%= f.text_field :password, class: "input100", placeholder: "Type your password" %><br>
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Password Confirmation is required">
-						<span class="label-input100">Password Confirmation</span>
-							<%= f.text_field :password_confirmation, class: "input100", placeholder: "Confirm your password" %><br>
+							<%= f.text_field :password, class: "input100", placeholder: "Type your password" %><br>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
-					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Forgot password?
-						</a>
+					<div class="wrap-input100 validate-input" data-validate="Password Confirmation is required">
+						<span class="label-input100" style="margin: 2rem  0 0 3rem;"></span>
+							<%= f.text_field :password_confirmation, class: "input100", placeholder: "Confirm your password" %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 					
 					<div class="container-login100-form-btn">
@@ -54,7 +53,7 @@
 
 					<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
-							Or Sign Up Using
+							SignUp Using
 						</span>
 					</div>
 
@@ -71,26 +70,16 @@
 							<i class="fa fa-google"></i>
 						</a>
 					</div>
-
-					<div class="flex-col-c p-t-155">
-						<span class="txt1 p-b-17">
-							Or Sign Up Using
-						</span>
-
-						<a href="#" class="txt2">
-							Sign Up
+					<div class="login_link">
+						<a href="/session/new" class="txt2">
+							Log In
 						</a>
 					</div>
 				<% end %>
-				
-
-
 			</div>
-		</div>
 	</div>
+</div>
 	
 
 	<div id="dropDownSelect1"></div>
-
-<hr>
 
