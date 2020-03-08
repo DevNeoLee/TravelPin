@@ -1,4 +1,46 @@
-<h3> from show</h3>
+
 <h4><%flash.each do |name, msg|%> </h4>
     <%= msg %>
 <%end %>
+
+<hr>
+
+<div class="posting_container">
+    <% @user.posts.reverse.each do |post| %><br>
+        <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54">
+                <div class="log_message">
+                    <%flash.each do |name, msg|%>
+                        <%= msg %>
+                    <%end %>
+                </div>	
+                    
+                <span class="login100-form-title p-b-49">
+                    <%= post.country %>
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
+                    <span class="label-input100"><%= post.write %></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                    <span class="label-input100">Google map</span>
+                    
+                </div>
+        
+
+                <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                    <span class="label-input100">More Comments</span>
+                </div>
+
+                <div class="flex-c-m">
+                    <%= link_to 'enjoy', user_post_path(@user, post), class: "login100-social-item bg1" %>
+                    <%= link_to 'edit', edit_user_post_path(@user, post), class: "login100-social-item bg2" %>
+                    <%= link_to 'delete',user_post_path(@user, post), method: 'delete', class: "login100-social-item bg3", data: { confirm: "are you sure?"} %>
+                </div>
+        </div>
+    
+    <% end %>
+</div>
+
+
+

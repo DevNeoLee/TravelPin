@@ -1,63 +1,54 @@
 
-<div class="container backphoto">
-    
-    <a class="logo_link" href="/"><div class="logo">
-        <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
-        <h1> PikachuTravel </h1>
-    </div></a>
-   
-        <div class="index_container">
-            <div>
-                <h4><%flash.each do |name, msg|%> </h4>
+    <div class="index_container">
+        <div>
+            <%flash.each do |name, msg|%>
                     <%= msg %>
-                <%end %>
-            </div>
-            <div class="log_container">
-                <% if current_user %>
-
-
+            <%end %>
+        </div>
+        <div class="log_container">
+            <% if current_user %>
                 <div>
                     <h3> you are Logged In<h3>
                     <h3> <%=link_to 'Log-Out', session_path('current'), method: "delete" %></h2>
                 </div>
-
-
-                <% else %>
-                 <a class="logo_link" href="/">
-                    <div class="logo" style="padding: 0 0 1rem 4rem;">
+            <% else %>
+                <a class="logo_link" href="/">
+                    <div class="logo_mid">
                         <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
-                        <h1> PikachuTravel </h1>
+                        <h1> TravelDiary </h1>
                     </div>
                 </a>
-                    <h3>better way to keep your travel memory</h3>
-                    <div class="loginlinks">
-                        <div class="container-login100-form-btn">
-                            <div class="wrap-login100-form-btn">
-                                <div class="login100-form-bgbtn"></div>
-                                <%=link_to 'log in ', "/session/new", class: "login100-form-btn log_font" %>
-                            </div>
+                <h3>better way to keep your travel memory</h3>
+                <div class="loginlinks">
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <%=link_to 'log in ', "/session/new", class: "login100-form-btn log_font" %>
                         </div>
                     </div>
-                    <div class="loginlinks">
-                        <div class="container-login100-form-btn">
-                            <div class="wrap-login100-form-btn">
-                                <div class="login100-form-bgbtn"></div>
-                                <%=link_to 'sign up', "/users/new", class: "login100-form-btn log_font" %>
-                            </div>
+                </div>
+                <div class="loginlinks">
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <%=link_to 'sign up', "/users/new", class: "login100-form-btn log_font" %>
                         </div>
                     </div>
-                     <div class="loginlinks">
-                        <div class="container-login100-form-btn">
-                            <div class="wrap-login100-form-btn">
-                                <div class="login100-form-bgbtn"></div>
-                                <%=link_to 'demo', "/users/new",  class: "login100-form-btn log_font" %>
-                            </div>
+                </div>
+                <div class="loginlinks">
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <%=link_to 'demo', "/users/new",  class: "login100-form-btn log_font" %>
                         </div>
-					</div>  
-            </div>
-        <% end %>
+                    </div>
+                </div>  
+            <% end %>
+        </div>
     </div>
-</div>
+   
+
+
 
 
 

@@ -1,14 +1,8 @@
-<div class="limiter backphoto">
-	<a class="logo_link" href="/"><div class="logo">
-        <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
-        <h1> PikachuTravel </h1>
-    </div></a>
-	
-	<div class="container-login100">
-			
+<div class="limiter">
+	<div class="container-login100">			
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 					<div class="log_message">
-						<h4><%flash.each do |name, msg|%> </h4>
+						<%flash.each do |name, msg|%>
 							<%= msg %>
 						<%end %>
 					</div>
@@ -79,7 +73,3 @@
 			</div>
 	</div>
 </div>
-	
-
-	<div id="dropDownSelect1"></div>
-

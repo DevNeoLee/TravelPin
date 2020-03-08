@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PikachuTravel</title>
+    <title>TravelDiary</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag '/icons/favicon.ico' %>
@@ -9,15 +9,37 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
 
   <body>
-    <%= yield %>
+    <div class="container backphoto">
+        <div class="main_container">
 
+          <nav class="main_nav">
+            <a class="logo_link" href="/">
+              <div class="logo">
+                <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
+                <h1> TravelDiary </h1>
+              </div>
+            </a>
 
+            <% if current_user  %>
+                  <input type="text" placeholder=" Search.." class="nav_input">
+                  <ul class="right_nav">
+                      <li><%= link_to 'Home',user_path(current_user) ,class: "nav_list"%></li>
+                      <li><%= link_to 'name_user','#' ,class: "nav_list"%></li>
+                      <li><%= link_to 'NewPost', new_user_post_path(current_user) ,class: "nav_list" %></li>
+                      <li><%= link_to 'logout', session_path(current_user) ,method: 'delete',class: "nav_list"%></li>
+                      <li><%= link_to 'userMenu','#' ,class: "nav_list"%></li>   
+                  </ul>
+              
+            <% end %>
+          </nav>
+
+          <%= yield %>
+        </div>
+    </div>
   </body>
 </html>

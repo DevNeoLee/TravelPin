@@ -10,19 +10,43 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require active_storage_drag_and_drop
  *= require_tree .
  *= require_self
  */
-.logo {
-     text-align: center;
-     display: flex;
-     justify-items: center;
-     margin: 0 auto;
-     padding: 2rem 0rem 1rem 1rem;
+ 
+ /*-----------application.html.erb---------------------*/
+.container {
+    height: 100%;
+    width: 100%;
 }
+    
+.main_container {
+    height: 100%;
+    width: 100%;
+}
+.backphoto {
+    background-image: url('bg-01.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main_nav {
+     display: flex;
+     /* justify-content: space-around; */
+ }
 
 .logo_link {
     text-decoration: none;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
 }
 
 .logo_img {
@@ -30,42 +54,87 @@
     background-color: white;
     padding: 0.8rem 0.2rem 0.8rem 0.5rem;
     /* border: 1px solid tpink; */
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 0.3rem 0 0 0.3rem;
 }
+
  .logo h1 {
      text-align: center;
      background-color: white;
-     padding: 1.3rem 0.5rem 0.5rem 0rem;
+     padding: 1.5rem 1rem 0.5rem 0rem;
      /* border: 1px solid lightpink; */
-     border-radius: 0px 5px 5px 0px;
+     border-radius: 0 0.3rem 0.3rem 0;
      color: black;
-    
-
-
- }
- .backphoto {
-    background-image: url('bg-01.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
  }
 
- .index_container {
-    display: grid;
-    margin: 5rem auto;
+ .nav_input {
+    margin: 2rem 1rem 0 4rem;
+    height: 3.9rem;
+    width: 30rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+ }
+
+  .right_nav {
+     list-style: none;
+     display: flex;
+     height: 3.9rem;
+     margin: 2rem 1rem 0 1rem;
+
+     background-color: white;
+     border-radius: 0.3rem;
+     padding: 1rem;
+ }
+
+ .right_nav li {
+     padding-top: 0.3rem;
+ }
+
+ .nav_list {
+     text-decoration: none;
+     margin: 1rem;
+     padding: 1rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1.2rem ;
+    color: black;
+ }
+
+ /*-------------------index.html.erb----------------------*/
+
+ .index_container, .show_container{
+    margin: 0rem auto;
     justify-content: center;
+    height: 100vh;
+    
 }
 
  .log_container {
-    padding: 5rem;
+    padding: 1rem;
     margin: 0 auto;
     display: grid;
     border-radius: 0.7rem;
     background: white;
+    width: 50%;
+}
+
+.log_container h3 {
+    text-align: center;
+}
+
+
+.logo_mid {
+    display: grid;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.logo_mid h1 {
+    color: black;
+    float: left;
+    padding-bottom: 2rem;
 }
 
 .loginlinks {
-    margin: 2rem;
+    margin: 2rem auto;
+    width: 50%;
 }
 
 .log_font{
@@ -73,9 +142,7 @@
     text-decoration: none;
 }
 
- .container {
-     height: 100vh;
- }
+
 
  .signup_link, .login_link {
      padding: 2rem 0 0 0;
@@ -90,3 +157,84 @@
      background-color: lightpink;
     
  }
+
+ /*---------------show.html.erb ,users------------*/
+
+hr {
+    opacity: 0.3;
+    /* margin: 1rem; */
+}
+
+.posting_container {
+    padding: 0.5rem;
+    margin: 0rem;
+    border: 1px solid darkgray;
+    
+   display: grid;
+   grid-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+
+ 
+}
+
+.wrap-posting100 {
+  background: #fff;
+  border-radius: 0.8rem;
+  
+}
+
+.flex-c-m {
+    margin-top: 0rem;
+}
+
+.flex-c-m a {
+    text-decoration: none; 
+    font-size: 0.8rem;
+}
+
+
+
+/*--------post, new.html.erb ---------*/
+
+/* .drag_drop {
+    width: 12rem;
+    height: 14rem;
+    border: dotted 0.3rem lightseagreen;
+    display: grid;
+    margin: 1rem 0 1rem 0;
+
+} */
+
+.drag_drop p {
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.text_area {
+    height: 7rem;
+}
+
+/*-----------show.html.erb, posts -----*/
+
+article {
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.post-container {
+    padding: 2rem;
+}
+
+.post_image {
+    width: 20rem;
+    height: 20rem;
+}
+
+.delete {
+    background: lightgreen;
+    width: 5rem;
+    height: 5rem;
+} */

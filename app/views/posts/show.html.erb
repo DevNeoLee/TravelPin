@@ -1,0 +1,41 @@
+<h3>from show, posts </h3>
+
+<div>
+    <div class="limiter">
+        <div class="container-login100">			
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                        <div class="log_message">
+                            <%flash.each do |name, msg|%>
+                                <%= msg %>
+                            <%end %>
+                        </div>	
+                            <%=image_tag @post.image, class: "post_image" %>
+
+                        <span class="login100-form-title p-b-49">
+                            <%= @post.country %>
+                        </span>
+
+                        <div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
+                            <span class="label-input100"><%= @post.write %></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                            <span class="label-input100">Google map</span>
+                            
+                        </div>
+                
+
+                        <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                            <span class="label-input100">More Comments</span>
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button class= "login100-form-btn"><%=link_to 'Back Home', user_path(@user), class: "login100-form-btn"%></button><br>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+</div>

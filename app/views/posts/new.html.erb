@@ -1,0 +1,54 @@
+<div class="limiter">
+	<div class="container-login100">			
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+					<div class="log_message">
+						<%flash.each do |name, msg|%>
+							<%= msg %>
+						<%end %>
+					</div>
+
+                    <%= form_with(model: [ @user, @user.posts.build] , local: true, class: "login100-form validate-form") do |f|%>	
+						
+						
+					<span class="login100-form-title p-b-49">
+						Post Your Trip
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
+						<span class="label-input100">Which Country</span>
+                        <%= f.text_field :country, class: "input100", placeholder: "Country You Visited" %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Local Location is required">
+						<span class="label-input100">Local Location</span>
+                        <%= f.text_field :country, class: "input100", placeholder: "Address or Local Location" %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+                
+                    
+                    <div class="drag_drop">
+                        <%= f.drag_and_drop_file_field :image, "Drag and Drop Images Here", size_limit: 5_000_000, accept: 'image/png, image/jpeg, image/gif, image/tiff' %><br>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+						<span class="label-input100">Write Diary</span>
+                        <%= f.text_area :write, class: "input100 text_area", placeholder: "the story..." %><br>
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							 <%= f.button "submit", class: "login100-form-btn" %><br>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
+	</div>
+</div>
+	
+
+<div id=""></div>
+
