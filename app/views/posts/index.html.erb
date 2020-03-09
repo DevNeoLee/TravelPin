@@ -1,0 +1,44 @@
+
+
+<hr>
+<% if @posts[0][:notice] %>
+    <div class="index_no_result">
+        <div class="posting_container no_result">
+                <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54 no_result">
+                        <div class="wrap-input100 validate-input">
+                            <span class="label-input100 no_result_message"><%= @posts[0][:notice] %></span>
+                        </div>   
+                </div>
+        </div>
+    </div>
+<% else %> 
+    <div class="posting_container">
+        <% @posts.reverse.each do |post| %><br>
+            <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54">
+                        
+                    <span class="login100-form-title p-b-49">
+                        <%= post.country %>
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
+                        <span class="label-input100"><%= post.write %></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                        <span class="label-input100">Google map</span>
+                        
+                    </div>
+            
+                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
+                        <span class="label-input100">More Comments</span>
+                    </div>
+                
+            </div>
+        
+        <% end %>
+    </div>
+<% end %>
+
+
+
+

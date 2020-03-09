@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
-
+    def index
+        @posts = Post.search(params[:search])
+    end
+    
     private
 
     def current_user
@@ -7,5 +10,7 @@ class ApplicationController < ActionController::Base
     end
     helper_method :current_user
 
-   
+    def post_params
+        params.require(:post).permit(:write, :country, :image, :user_id, :name, :post_id, :search)
+    end
 end

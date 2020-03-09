@@ -66,12 +66,27 @@
      color: black;
  }
 
+ .search_bar_container {
+    display: flex
+ }
+
  .nav_input {
-    margin: 2rem 1rem 0 4rem;
+    margin: 2rem 0rem 0 4rem;
     height: 3.9rem;
-    width: 30rem;
-    border-radius: 0.3rem;
+    width: 20rem;
+    border-radius: 0.3rem 0 0 0.3rem;
     font-size: 1.3rem;
+    font: lightgray;
+ }
+
+ .nav_search_button {
+     margin: 2rem 1rem 0 0.01rem;
+    height: 3.9rem;
+    width: 5rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    font-size: 0.9rem;
+    color: gray;
+    background-color: rgb(250, 250, 250);
  }
 
   .right_nav {
@@ -191,10 +206,28 @@ hr {
     text-decoration: none; 
     font-size: 0.8rem;
 }
+/*---------- index.html.erb , post --------------*/
 
+.index_no_result {
+    height: 100vh;
+    text-align: center;
+    border: 0;
 
+}
 
-/*--------post, new.html.erb ---------*/
+.no_result {
+    margin: 0 auto;
+    display: grid;
+    width: 30rem;
+    border: 0;
+    justify-content: center;
+}
+
+.no_result_message {
+    font-size: 1.3rem;
+}
+
+/*-------- new.html.erb, post---------*/
 
 /* .drag_drop {
     width: 12rem;
