@@ -1,0 +1,78 @@
+
+<hr>
+
+<div class="post_deleted_message">
+    <h2><%flash.each do |name, msg|%> </h2>
+        <%= msg %>
+    <%end %>
+</div>
+
+<% if @user.posts.length == 0 && current_user %>
+    <div class="posting_container" style="height: 100vh;">
+        <div class="limiter">
+            <div class="container-login100">			
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                            <span class="txt2">
+                                0 posting.... Let's Create New Posting!
+                            </span>
+                            <div class="wrap-input100 validate-input m-b-23">
+                                <span class="label-input100"></span>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                   <%= link_to "click", new_user_post_path(current_user), class: "login100-form-btn" %>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+<% elsif @user.posts.length == 0 %>
+    <div class="posting_container" style="height: 100vh;">
+        <div class="limiter">
+            <div class="container-login100">			
+                    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                            <div class="txt2">
+                                Account succefully Created!
+                                Please Sign In Now!
+                            </div>
+                            <div class="wrap-input100 validate-input m-b-23">
+                                <span class="label-input100"></span>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <%= link_to "click", '/', class: "login100-form-btn" %>
+                                    
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>        
+<% else %>
+    <div class="posting_container">
+        <% @user.posts.reverse.each do |post| %><br>
+            <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54">
+                    <span class="login100-form-title p-b-49">
+                        <%= post.country %>
+                    </span>
+                    <%=image_tag post.image, class: "post_image" %>
+                    <div >
+                        <span class="label-input100"><%= post.write %></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" >
+                        <span class="label-input100"></span>
+                    </div>
+                    
+                    <div class="flex-c-m">
+                        <%= link_to 'enjoy', user_post_path(@user, post), class: "login100-social-item bg1" %>
+                        <%= link_to 'edit', edit_user_post_path(@user, post), class: "login100-social-item bg2" %>
+                        <%= link_to 'delete',user_post_path(@user, post), method: 'delete', class: "login100-social-item bg3", data: { confirm: "are you sure?"} %>
+                    </div>
+            </div>
+        <% end %>
+<% end %>
+</div>
+
+
+

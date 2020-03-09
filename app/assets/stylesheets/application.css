@@ -16,14 +16,21 @@
  */
  
  /*-----------application.html.erb---------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 .container {
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
     
 .main_container {
     height: 100%;
     width: 100%;
+
 }
 .backphoto {
     background-image: url('bg-01.jpg');
@@ -33,7 +40,9 @@
 }
 
 .main_nav {
-     display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
      /* justify-content: space-around; */
  }
 
@@ -46,7 +55,7 @@
     display: flex;
     justify-items: center;
     margin: 0 auto;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 2rem 0rem 1rem 1rem;
 }
 
 .logo_img {
@@ -66,50 +75,50 @@
      color: black;
  }
 
+ .search_nav_container {
+     display: grid;
+     grid-template-columns: 1fr 2.5fr;
+ }
  .search_bar_container {
-    display: flex
+    display: grid;
+    grid-template-columns: 8fr 2fr;
  }
 
  .nav_input {
-    margin: 2rem 0rem 0 4rem;
+    margin: 2rem 0rem 0 1.5rem;
     height: 3.9rem;
-    width: 20rem;
     border-radius: 0.3rem 0 0 0.3rem;
     font-size: 1.3rem;
     font: lightgray;
  }
 
  .nav_search_button {
-     margin: 2rem 1rem 0 0.01rem;
+    margin: 2rem 1rem 0 0;
     height: 3.9rem;
-    width: 5rem;
     border-radius: 0 0.3rem 0.3rem 0;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: gray;
     background-color: rgb(250, 250, 250);
  }
 
   .right_nav {
-     list-style: none;
-     display: flex;
-     height: 3.9rem;
-     margin: 2rem 1rem 0 1rem;
-
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
      background-color: white;
      border-radius: 0.3rem;
-     padding: 1rem;
+     height: 3.9rem;
+     margin: 2rem 1rem 0 0;
  }
 
  .right_nav li {
-     padding-top: 0.3rem;
+     padding-top: 1.2rem;
  }
 
  .nav_list {
      text-decoration: none;
-     margin: 1rem;
-     padding: 1rem 0.5rem 0.5rem 0.5rem;
     font-size: 1.2rem ;
-    color: black;
+    color: darkgray;
  }
 
  /*-------------------index.html.erb----------------------*/
@@ -173,11 +182,95 @@
     
  }
 
- /*---------------show.html.erb ,users------------*/
+ /*-----practice version----------show.html.erb ,users------------*/
+ .phrame {
+    display: grid;
+    grid-template-columns: 1fr;
+ }
+ 
+ .kontainer {
+    columns: 17rem;
+    padding: 1rem;
+    margin: auto;
+    width: 95%;
+ }
+
+ .kard {
+     list-style-type: none;
+     display: grid;
+     grid-template-columns: 1fr;
+     break-inside: avoid;
+     background: white;
+     border-radius: 0.5rem;
+     box-shadow: 0.1px 0.1px 2px black;
+     margin-bottom: 1rem;
+ }
+
+ .kard_image {
+    width: 100%;
+    display: block;
+    border-radius: 3px 3px 0 0;
+ }
+
+ .kard_title {
+     text-align: center;
+     padding-top: 0.5rem;
+ }
+ .kard_title p{
+     font-size: 1.5rem;
+    
+ }
+ .kard_write {
+     width: 100%;
+     padding: 0.7rem;
+     text-align: center;
+ 
+
+     
+ }
+
+ .kard_write p  {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    /* overflow-wrap: break-word; */
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    margin: 1rem;
+
+  
+ }
+
+ .links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0.8rem;
+ }
+
+ .links a {
+     text-decoration: none;
+ }
+
+ .rink {
+     font-size: 0.8rem
+ }
+
+ 
+
+
+
+
+
+
+
+/*---------------show.html.erb ,users------------*/
+.post_deleted_message {
+    display: grid;
+    justify-content: center;
+}
 
 hr {
-    opacity: 0.3;
-    /* margin: 1rem; */
+    opacity: 0.2;
+    margin: 1.5rem;
 }
 
 .posting_container {
@@ -187,7 +280,7 @@ hr {
     
    display: grid;
    grid-gap: 0.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 
  
 }
@@ -252,22 +345,12 @@ hr {
 
 /*-----------show.html.erb, posts -----*/
 
-article {
-    border-radius: 0.5rem;
-    background-color: white;
+.phrame2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.post-container {
-    padding: 2rem;
+.no_text_decoration {
+    text-decoration: none;
 }
-
-.post_image {
-    width: 20rem;
-    height: 20rem;
-}
-
-.delete {
-    background: lightgreen;
-    width: 5rem;
-    height: 5rem;
-} */

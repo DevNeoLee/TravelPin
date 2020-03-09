@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
 
     def index
-        @posts = Post.search(params[:search])
+        @user = User.find(params[:user_id])
+        @posts = @user.posts.search(params[:search])
     end
 
     def new 
         @user = User.find(params[:user_id])
-        @post = Post.new
+        @post = @user.posts.new
     end
 
     def create
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
         @user =  User.find(params[:user_id])
         @post = @user.posts.find(params[:id])
         @post.destroy
-        redirect_to user_path(@user), notice: "Post Deleted"
+        redirect_to user_path(@user), notice: "Post Succefully Deleted"
     end
 
     private

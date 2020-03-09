@@ -69,7 +69,7 @@ h1,h2,h3,h4,h5,h6 {
 p {
 	font-family: Poppins-Regular;
 	font-size: 14px;
-	line-height: 0.2;
+	line-height: 1;
 	color: #666666;
 	margin: 0px;
 }
@@ -135,14 +135,14 @@ iframe {
 .txt1 {
   font-family: Poppins-Regular;
   font-size: 14px;
-  line-height: 0.2;
+  line-height: 1.5;
   color: #666666;
 }
 
 .txt2 {
   font-family: Poppins-Regular;
   font-size: 14px;
-  line-height: 0.2;
+  line-height: 1.5;
   color: #333333;
   text-transform: uppercase;
 }
@@ -195,9 +195,9 @@ iframe {
 .login100-form-title {
   display: block;
   font-family: Poppins-Bold;
-  font-size: 39px;
+  font-size: 2rem;
   color: #333333;
-  line-height: 0.5;
+  line-height: 1.5;
   text-align: center;
 }
 

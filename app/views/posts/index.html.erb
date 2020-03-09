@@ -12,31 +12,33 @@
         </div>
     </div>
 <% else %> 
-    <div class="posting_container">
-        <% @posts.reverse.each do |post| %><br>
-            <div class="wrap-posting100 p-l-55 p-r-55 p-t-45 p-b-54">
-                        
-                    <span class="login100-form-title p-b-49">
-                        <%= post.country %>
-                    </span>
-
-                    <div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
-                        <span class="label-input100"><%= post.write %></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
-                        <span class="label-input100">Google map</span>
-                        
-                    </div>
-            
-                    <div class="wrap-input100 validate-input" data-validate="Local Location is required">
-                        <span class="label-input100">More Comments</span>
-                    </div>
-                
-            </div>
-        
-        <% end %>
+   
+<div class="phrame">
+<div class="log_message">
+        <%flash.each do |name, msg|%>
+            <%= msg %>
+        <%end %>
     </div>
+    <ul class="kontainer">
+        <% @posts.reverse.each do |post| %>
+            <li class="kard">
+                 
+                <%=image_tag post.image, class: "kard_image" %>
+
+                <div class="kard_title">
+                    <p><%= post.country %><p>
+                </div>
+
+                <div class="kard_write"><p><%= post.write %></p></div>
+                <div class="links">
+                    <%= link_to 'enjoy', user_post_path(@user, post), class: "login100-social-item bg1 rink" %>
+                    <%= link_to 'edit', edit_user_post_path(@user, post), class: "login100-social-item bg2 rink" %>
+                    <%= link_to 'delete',user_post_path(@user, post), method: 'delete', class: "login100-social-item bg3 rink", data: { confirm: "are you sure?"} %>     
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
 <% end %>
 
 
