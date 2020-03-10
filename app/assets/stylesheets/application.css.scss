@@ -33,7 +33,8 @@
 
 }
 .backphoto {
-    background-image: url('bg-01.jpg');
+    background: asset_url('bg-01.jpg');
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
