@@ -1,3 +1,6 @@
+    <script>
+      
+    </script>
 
     <div class="index_container">
         <div class="log_Kontainer">
@@ -39,7 +42,7 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <%=link_to 'demo', "/users/new",  class: "login100-form-btn log_font" %>
+                            <%=link_to 'demo', session_index_path(email: 'aa', password: 'aa'), method: 'post', id: "demo",  class: "login100-form-btn log_font" %>
                         </div>
                     </div>
                 </div>  
