@@ -11,7 +11,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Country is required">
-						<span class="label-input100">Which Country</span>
+						<span class="label-input100">Country Visited</span>
                         <%= f.text_field :country, class: "input100", placeholder: "Country You Visited" %><br>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Local Location is required">
-						<span class="label-input100">Write Diary</span>
+						<span class="label-input100"> Write Story </span>
                         <%= f.text_area :write, class: "input100 text_area", placeholder: "the story..." %><br>
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
@@ -32,7 +32,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							 <%= f.button "submit", class: "login100-form-btn" %><br>
+							 <%= f.button "submit", class: "login100-form-btn", style: "padding-top: 1.4rem"%><br>
 						</div>
 					</div>
 

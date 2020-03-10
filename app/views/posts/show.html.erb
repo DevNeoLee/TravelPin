@@ -1,17 +1,17 @@
- <div class="log_message">
-        <%flash.each do |name, msg|%>
-            <%= msg %>
-        <%end %>
-    </div>
+  <div class="log_Kontainer">
+            <%flash.each do |name, msg|%>
+                    <div class="log_message"><%= msg %></div>
+            <%end %>
+        </div>
 
 <hr>
 
 <div class="phrame2">
     <li class="kard" style="padding: 1rem; width: 50%;">
                     
-        <%=image_tag @post.image, class: "kard_image" %>
+        <%=image_tag @post.image, class: "kard_image"%>
 
-        <div class="kard_title" style="margin-top: 2rem;">
+        <div class="kard_title" style="margin-top: 2.1rem;">
             <p><%= @post.country %><p>
         </div>
 

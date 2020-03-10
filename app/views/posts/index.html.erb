@@ -14,10 +14,10 @@
 <% else %> 
    
 <div class="phrame">
-<div class="log_message">
-        <%flash.each do |name, msg|%>
-            <%= msg %>
-        <%end %>
+    <div class="log_Kontainer">
+            <%flash.each do |name, msg|%>
+                    <div class="log_message"><%= msg %></div>
+            <%end %>
     </div>
     <ul class="kontainer">
         <% @posts.reverse.each do |post| %>

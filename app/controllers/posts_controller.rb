@@ -14,7 +14,7 @@ class PostsController < ApplicationController
         @user = User.find(params[:user_id])
         @post = @user.posts.create(post_params)
         if @post.save
-            redirect_to user_post_path(@user, @post), notice: "Created your posting"
+            redirect_to user_post_path(@user, @post), notice: " Posting Created "
         else
             render "new"
         end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
         @user = current_user
         @post = current_user.posts.find(params[:id])
         if @post.update(post_params)
-            redirect_to user_post_path(@user, @post), notice: "Created your posting"
+            redirect_to user_post_path(@user, @post), notice: " Posting Updated "
         else
             render "edit"
         end
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
         @user =  User.find(params[:user_id])
         @post = @user.posts.find(params[:id])
         @post.destroy
-        redirect_to user_path(@user), notice: "Post Succefully Deleted"
+        redirect_to user_path(@user), notice: " Posting Deleted "
     end
 
     private

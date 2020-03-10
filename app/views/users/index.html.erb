@@ -1,8 +1,8 @@
 
     <div class="index_container">
-        <div>
+        <div class="log_Kontainer">
             <%flash.each do |name, msg|%>
-                    <%= msg %>
+                    <div class="log_message"><%= msg %></div>
             <%end %>
         </div>
         <div class="log_container">
@@ -15,7 +15,7 @@
                 <a class="logo_link" href="/">
                     <div class="logo_mid">
                         <%= image_tag("icons/travel.png", :alt => "travel_icon", class: "logo_img") %> 
-                        <h1> TravelDiary </h1>
+                        <h1> TravelPin </h1>
                     </div>
                 </a>
                 <h3>better way to keep your travel memory</h3>
