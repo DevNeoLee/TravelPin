@@ -1,9 +1,6 @@
-# README
+  live site: https://secure-brook-64571.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Rails App: Travel Photo Pinning App
 
 * Ruby version
 
