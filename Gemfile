@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'active_storage_drag_and_drop'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -56,5 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
  gem 'sqlite3', group: :development
  gem 'pg', group: :production
-
+ 
+ 
+ gem "google-cloud-storage", "~> 1.8", require: false, group: :production
  gem 'rails_12factor', group: :production

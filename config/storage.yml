@@ -4,7 +4,7 @@ test:
 
 local:
   service: Disk
-  root: <%= Rails.root.join("storage") %>
+  root: <%= Rails.root.join("tmp/storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -16,17 +16,26 @@ local:
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
-#   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket
+  
+
+google: 
+  service: GCS
+  project: TravelPin
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: travelpin_storage771773377
+
+google_dev:
+  service: GCS
+  project: TravelPin
+  credentials: <%= Rails.root.join("config/secrets/travelpin_app.json") %>
+  bucket: travelpin_storage771773377
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
-#   service: AzureStorage
-#   storage_account_name: your_account_name
-#   storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
-#   container: your_container_name
+  # service: AzureStorage
+  # storage_account_name: your_account_name
+  # storage_access_key: <%= Rails.application.credentials.dig(:azure_storage, :storage_access_key) %>
+  # container: your_container_name
 
 # mirror:
 #   service: Mirror
