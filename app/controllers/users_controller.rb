@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            redirect_to user_path(@user), notice: " Thank you for Choosing Us "
+            redirect_to user_path(@user), notice: " Thank you for Signing Up! : )/n Now, Please Log In" 
         else
             render 'new'
         end
