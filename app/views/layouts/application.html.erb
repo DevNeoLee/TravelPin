@@ -27,6 +27,8 @@
             <% if current_user  %>
             <div class="search_nav_container">
                 <%= form_tag user_posts_path(current_user), method: 'get',style: "margin: 0;" do %>
+                  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						
                 <div class="search_bar_container">
                   <%= text_field_tag :search, params[:search], class: "nav_input", placeholder: "  search..." %>
                   <%= submit_tag("search", class: "nav_search_button")  %>

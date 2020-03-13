@@ -8,6 +8,7 @@
 					</div>
 
                     <%= form_with(model: [ @user, @user.posts.build] , url: user_post_path(@user, @post), method: 'patch', local: true, class: "login100-form validate-form") do |f|%>	
+						<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 						
 						
 					<span class="login100-form-title p-b-49">

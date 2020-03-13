@@ -8,7 +8,8 @@
 					</div>
 
 				<%= form_with url: session_index_path, method: 'POST', local: true, class: "login100-form validate-form" do |f|%>	
-
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+						
 					<span class="login100-form-title p-b-49" style="margin: 0.5rem;">
 						Login
 					</span>

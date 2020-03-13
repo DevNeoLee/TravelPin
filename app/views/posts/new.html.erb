@@ -3,8 +3,8 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				
 
-                    <%= form_with(model: [ @user, @user.posts.build] , local: false, class: "login100-form validate-form") do |f|%>	
-						
+                    <%= form_with(model: [ @user, @user.posts.build] ,method:'post', class: "login100-form validate-form") do |f|%>	
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 						
 					<span class="login100-form-title p-b-49">
 						Post Your Trip
@@ -19,7 +19,8 @@
 					
                 
                     
-                    <div class="drag_drop">
+					<div class="drag_drop">
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                         <%= f.drag_and_drop_file_field :image, "Drag and Drop Images Here", size_limit: 5_000_000, accept: 'image/png, image/jpeg, image/gif, image/tiff' %><br>
                     </div>
 
