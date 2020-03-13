@@ -1,6 +1,4 @@
 
-
-
 require_relative 'boot'
 
 require 'rails/all'
@@ -13,7 +11,14 @@ Bundler.require(*Rails.groups)
 
 module Travelpin
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options, :put, :delete, :patch]
+      end
+    end
+# Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
     config.serve_static_assets = true
     config.assets.compile = true
@@ -23,12 +28,7 @@ module Travelpin
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
-      end
-    end
+    
     
   end
 end
