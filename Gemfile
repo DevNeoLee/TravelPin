@@ -59,5 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
  gem 'pg', group: :production
  
  
- gem "google-cloud-storage", require: false, group: :production
+ gem "google-cloud-storage", require: false
  gem 'rails_12factor', group: :production
