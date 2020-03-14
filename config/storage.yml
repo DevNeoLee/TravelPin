@@ -1,25 +1,30 @@
-# test:
-#   service: Disk
-#   root: <%= Rails.root.join("tmp/storage") %>
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
 
-# local:
-#   service: Disk
-#   root: <%= Rails.root.join("tmp/storage") %>
+local:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+amazon:
+  service: S3
+  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  region: us-west-oregon
+  bucket: <%= ENV['AWS_BUCKET'] %>
 
 
-  
+# google: 
+#   service: GCS
+#   project: travelpin-270914
+#   credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+#   bucket: travelpin_storage771773377
 
-google: 
-  service: GCS
-  project: travelpin-270914
-  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
-  bucket: travelpin_storage771773377
-
-google_dev:
-  service: GCS
-  project: travelpin-270914
-  credentials: <%= Rails.root.join("config/secrets/gce.json") %>
-  bucket: travelpin_storage771773377
+# google_dev:
+#   service: GCS
+#   project: travelpin-270914
+#   credentials: <%= Rails.root.join("config/secrets/gce.json") %>
+#   bucket: travelpin_storage771773377
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
