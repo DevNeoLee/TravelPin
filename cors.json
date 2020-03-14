@@ -1,0 +1,21 @@
+
+[
+    {
+        "origin": [
+            "https://secure-brook-64571.herokuapp.com/"
+        ],
+        "responseHeader": [
+            "Content-Type",
+            "Content-Md5"
+        ],
+        "method": [
+            "PUT",
+            "GET",
+            "HEAD",
+            "DELETE",
+            "OPTIONS",
+            "POST"
+        ],
+        "maxAgeSeconds": 3600
+    }
+]
