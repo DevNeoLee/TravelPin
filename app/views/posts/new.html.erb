@@ -20,7 +20,6 @@
                 
                     
 					<div class="drag_drop">
-					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                         <%= f.drag_and_drop_file_field :image, "Drag and Drop Images Here", size_limit: 5_000_000, accept: 'image/png, image/jpeg, image/gif, image/tiff' %><br>
                     </div>
 
