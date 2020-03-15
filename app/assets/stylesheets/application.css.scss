@@ -122,6 +122,26 @@
     font: rgba(109, 109, 109, 0.178);
  }
 
+ footer {
+     padding-bottom: 2rem;
+     text-align: center;
+
+ }
+
+ footer span {
+     padding-right: 1rem;
+     padding-left: 1rem;
+ }
+
+ footer span p {
+     font-size: 1rem;
+ }
+
+ footer span a {
+     text-decoration: none;
+     font-size: 1rem;
+ }
+
  /*-------------------index.html.erb----------------------*/
 
  .index_container, .show_container{
