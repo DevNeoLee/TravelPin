@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'rack-cors'
-
+gem "actionview", ">= 6.0.2.2"
 gem 'active_storage_drag_and_drop'
 
 
