@@ -19,3 +19,5 @@ Rails App: Travel Photo Pinning App
 * Deployment instructions
 
 * ...
+
+v0.01
